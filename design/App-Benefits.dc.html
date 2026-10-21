@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>현 · 회원 등급별 혜택</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1F2B4D}a:hover{color:#16181F}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F6F7F9; color: #16181F; font-family: 'IBM Plex Sans KR', system-ui, sans-serif; position: relative; overflow: hidden">
+  <div style="padding: 20px 20px 104px; display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; align-items: center; height: 44px">
+      <h1 style="margin: 0; font-size: 22px; font-weight: 700">회원 혜택</h1>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #E6E8EE; border-radius: 18px; overflow: hidden">
+      <div style="display: grid; grid-template-columns: 1.15fr 1fr 1fr; align-items: center; padding: 12px 14px; border-bottom: 1px solid #E6E8EE; font-size: 12px; font-weight: 700">
+        <span style="color: #5E6472">혜택</span>
+        <span style="color: #1F2B4D; text-align: center">PRIVATE</span>
+        <span style="color: #5E6472; text-align: center">BASIC</span>
+      </div>
+      <sc-for list="{{rows}}" as="r" hint-placeholder-count="12">
+        <div style="display: grid; grid-template-columns: 1.15fr 1fr 1fr; align-items: center; padding: 7px 14px; border-bottom: 1px solid #F0F1F5; font-size: 12.5px; line-height: 1.35">
+          <span style="font-weight: 600">{{r.name}}</span>
+          <span style="text-align: center; color: #1F2B4D; font-weight: 600">{{r.p}}</span>
+          <span style="text-align: center; color: #5E6472">{{r.b}}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="background: #1F2B4D; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px; color: #FFFFFF">
+      <div style="font-size: 15px; font-weight: 700">이미 [제휴 결정사] 회원이세요?</div>
+      <div style="font-size: 12.5px; color: #C9CFDD; line-height: 1.5">회원번호와 본인인증으로 연동하면 PRIVATE 혜택이 바로 적용돼요.</div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <a href="App-Home-Private.dc.html" style="height: 44px; border-radius: 11px; background: #E8D3A0; color: #1F2B4D; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none">회원 연동</a>
+        <a href="App-Home-Private.dc.html" style="height: 44px; border-radius: 11px; border: 1px solid rgba(255,255,255,0.3); color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">상담 신청</a>
+      </div>
+    </div>
+  </div>
+
+  <nav aria-label="하단 메뉴" style="position: absolute; left: 0; right: 0; bottom: 0; height: 84px; background: #FFFFFF; border-top: 1px solid #E6E8EE; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-bottom: 18px; box-sizing: border-box">
+    <a href="App-Home-Private.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; color: #6B7180; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>홈</a>
+    <a href="App-Explore.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; color: #6B7180; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg>탐색</a>
+    <a href="App-Matches.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; color: #6B7180; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.35-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.65-7 10-7 10z"/></svg>매칭</a>
+    <a href="App-Benefits.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 11px; font-weight: 700; color: #1F2B4D; text-decoration: none">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>혜택</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rows: [
+        { name: '인증 배지', p: '결정사 서류 자동 연동', b: '본인인증' },
+        { name: '볼 수 있는 회원', p: '[등급별 범위]', b: '[등급별 범위]' },
+        { name: '매니저 제안 받기', p: '포함', b: '동의 시' },
+        { name: '셀프 좋아요', p: '무제한', b: '하루 3개' },
+        { name: '사진 공개', p: '바로 공개', b: '서로 좋아요 후' },
+        { name: '프라이빗 라운지', p: '이용', b: '—' },
+        { name: '매니저 1:1 상담', p: '포함', b: '—' },
+        { name: '셀프 매칭 주선', p: '매니저가 진행', b: '—' },
+        { name: '노출 범위', p: '직접 선택', b: '전체' },
+        { name: '지인 차단', p: '포함', b: '포함' },
+        { name: '제휴 데이트 장소', p: '[할인 내용]', b: '—' },
+        { name: '결정사 가입 우대', p: '—', b: '[우대 내용]' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
